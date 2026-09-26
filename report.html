@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Attendance Report</h1>
+
+    <table>
+
+        <tr>
+            <th>Roll Number</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Total Classes</th>
+            <th>Present</th>
+            <th>Absent</th>
+            <th>Attendance %</th>
+        </tr>
+
+        {% for report in reports %}
+
+        <tr>
+
+            <td>{{ report.roll_number }}</td>
+
+            <td>{{ report.name }}</td>
+
+            <td>{{ report.course }}</td>
+
+            <td>{{ report.total }}</td>
+
+            <td>{{ report.present }}</td>
+
+            <td>{{ report.absent }}</td>
+
+            <td>{{ report.percentage }}%</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/">Back to Home</a>
+
+</div>
+
+</body>
+</html>
